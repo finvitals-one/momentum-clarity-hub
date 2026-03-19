@@ -24,13 +24,8 @@ export const HeroSection = () => (
         </Button>
       </div>
 
-      {/* Animated momentum chart */}
-      <div className="relative mx-auto max-w-4xl">
+      <div className="mx-auto max-w-4xl">
         <MomentumChart />
-        <div className="absolute -bottom-4 left-6 rounded-xl border bg-card px-4 py-3 shadow-lg">
-          <p className="text-xs text-muted-foreground">Weekly Update</p>
-          <p className="text-sm font-bold text-primary">6 Indicators → 1 Score</p>
-        </div>
       </div>
     </div>
   </section>

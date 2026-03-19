@@ -30,6 +30,28 @@ const getZoneColor = (score: number) => {
   return "hsl(0, 70%, 55%)";
 };
 
+// Find the x-position where the line crosses a given score threshold
+const findCrossX = (
+  data: typeof DATA,
+  threshold: number,
+  toX: (i: number) => number,
+  direction: "up" | "down"
+) => {
+  for (let i = 1; i < data.length; i++) {
+    const prev = data[i - 1].score;
+    const curr = data[i].score;
+    if (direction === "up" && prev < threshold && curr >= threshold) {
+      const t = (threshold - prev) / (curr - prev);
+      return toX(i - 1) + t * (toX(i) - toX(i - 1));
+    }
+    if (direction === "down" && prev >= threshold && curr < threshold) {
+      const t = (threshold - prev) / (curr - prev);
+      return toX(i - 1) + t * (toX(i) - toX(i - 1));
+    }
+  }
+  return null;
+};
+
 export const MomentumChart = () => {
   const [progress, setProgress] = useState(0);
   const ref = useRef<SVGSVGElement>(null);
@@ -57,11 +79,11 @@ export const MomentumChart = () => {
     requestAnimationFrame(animate);
   }, [inView]);
 
-  const W = 800;
-  const H = 280;
-  const PAD_L = 10;
-  const PAD_R = 10;
-  const PAD_T = 20;
+  const W = 860;
+  const H = 300;
+  const PAD_L = 40;
+  const PAD_R = 15;
+  const PAD_T = 15;
   const PAD_B = 40;
   const chartW = W - PAD_L - PAD_R;
   const chartH = H - PAD_T - PAD_B;
@@ -71,15 +93,51 @@ export const MomentumChart = () => {
   const toY = (score: number) => PAD_T + chartH - (score / 100) * chartH;
   const toX = (i: number) => PAD_L + i * xStep;
 
-  // Zone backgrounds
-  const zones = [
-    { min: 70, max: 100, color: "hsl(142, 60%, 45%)", opacity: 0.12 },
-    { min: 50, max: 69, color: "hsl(45, 90%, 50%)", opacity: 0.12 },
-    { min: 0, max: 49, color: "hsl(0, 70%, 55%)", opacity: 0.12 },
-  ];
+  // Compute vertical zone boundaries based on where score crosses 50 and 70
+  const cross50Up = findCrossX(DATA, 50, toX, "up");
+  const cross70Up = findCrossX(DATA, 70, toX, "up");
+
+  const chartLeft = PAD_L;
+  const chartRight = PAD_L + chartW;
+  const chartTop = PAD_T;
+  const chartBottom = PAD_T + chartH;
+
+  // Build vertical zone rects
+  const verticalZones: { x: number; w: number; color: string; opacity: number }[] = [];
+
+  // Red zone: from start to where score crosses 50
+  const redEnd = cross50Up ?? chartRight;
+  verticalZones.push({
+    x: chartLeft,
+    w: redEnd - chartLeft,
+    color: "hsl(0, 70%, 55%)",
+    opacity: 0.12,
+  });
+
+  if (cross50Up != null) {
+    const yellowEnd = cross70Up ?? chartRight;
+    verticalZones.push({
+      x: cross50Up,
+      w: yellowEnd - cross50Up,
+      color: "hsl(45, 90%, 50%)",
+      opacity: 0.12,
+    });
+
+    if (cross70Up != null) {
+      verticalZones.push({
+        x: cross70Up,
+        w: chartRight - cross70Up,
+        color: "hsl(142, 60%, 45%)",
+        opacity: 0.12,
+      });
+    }
+  }
 
   // Dashed lines at 50 and 70
   const dashLines = [50, 70];
+
+  // Y-axis labels
+  const yLabels = [0, 20, 40, 50, 60, 70, 80, 100];
 
   const visibleCount = Math.floor(progress * DATA.length) + 1;
   const visibleData = DATA.slice(0, Math.min(visibleCount, DATA.length));
@@ -96,14 +154,14 @@ export const MomentumChart = () => {
         className="w-full h-auto"
         preserveAspectRatio="xMidYMid meet"
       >
-        {/* Zone backgrounds */}
-        {zones.map((z) => (
+        {/* Vertical zone backgrounds */}
+        {verticalZones.map((z, i) => (
           <rect
-            key={z.min}
-            x={PAD_L}
-            y={toY(z.max)}
-            width={chartW}
-            height={toY(z.min) - toY(z.max)}
+            key={i}
+            x={z.x}
+            y={chartTop}
+            width={z.w}
+            height={chartH}
             fill={z.color}
             opacity={z.opacity}
           />
@@ -113,27 +171,31 @@ export const MomentumChart = () => {
         {dashLines.map((v) => (
           <line
             key={v}
-            x1={PAD_L}
+            x1={chartLeft}
             y1={toY(v)}
-            x2={PAD_L + chartW}
+            x2={chartRight}
             y2={toY(v)}
             stroke="hsl(var(--muted-foreground))"
             strokeWidth="0.5"
             strokeDasharray="6 4"
-            opacity={0.4}
+            opacity={0.3}
           />
         ))}
 
-        {/* Zone labels */}
-        <text x={PAD_L + 6} y={toY(85)} fill="hsl(142, 60%, 45%)" fontSize="9" opacity={0.6} fontWeight="600">
-          GREEN ZONE
-        </text>
-        <text x={PAD_L + 6} y={toY(60)} fill="hsl(45, 90%, 50%)" fontSize="9" opacity={0.6} fontWeight="600">
-          YELLOW ZONE
-        </text>
-        <text x={PAD_L + 6} y={toY(25)} fill="hsl(0, 70%, 55%)" fontSize="9" opacity={0.6} fontWeight="600">
-          RED ZONE
-        </text>
+        {/* Y-axis labels */}
+        {yLabels.map((v) => (
+          <text
+            key={v}
+            x={PAD_L - 6}
+            y={toY(v) + 3}
+            textAnchor="end"
+            fill="hsl(var(--muted-foreground))"
+            fontSize="9"
+            opacity={0.6}
+          >
+            {v}
+          </text>
+        ))}
 
         {/* Line */}
         <path
@@ -156,7 +218,6 @@ export const MomentumChart = () => {
             stroke="white"
             strokeWidth="1.5"
             style={{
-              opacity: 1,
               filter: i === visibleData.length - 1 ? `drop-shadow(0 0 4px ${getZoneColor(d.score)})` : undefined,
             }}
           />
