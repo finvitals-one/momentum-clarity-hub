@@ -1,4 +1,5 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const faqs = [
   {
@@ -23,24 +24,39 @@ const faqs = [
   },
 ];
 
-export const FaqSection = () => (
-  <section id="faq" className="py-20">
-    <div className="mx-auto max-w-3xl px-6">
-      <h2 className="mb-10 text-center text-3xl font-bold tracking-tight md:text-4xl">
-        Frequently Asked Questions
-      </h2>
-      <Accordion type="single" collapsible className="space-y-3">
-        {faqs.map((faq, i) => (
-          <AccordionItem key={i} value={`faq-${i}`} className="rounded-xl border bg-card px-6">
-            <AccordionTrigger className="text-left font-semibold hover:no-underline">
-              {faq.q}
-            </AccordionTrigger>
-            <AccordionContent className="text-muted-foreground">
-              {faq.a}
-            </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
-    </div>
-  </section>
-);
+export const FaqSection = () => {
+  const heading = useScrollReveal();
+  const content = useScrollReveal();
+
+  return (
+    <section id="faq" className="py-20">
+      <div className="mx-auto max-w-3xl px-6">
+        <h2
+          ref={heading.ref}
+          className={`mb-10 text-center text-3xl font-bold tracking-tight md:text-4xl transition-all duration-700 ${heading.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+        >
+          Frequently Asked Questions
+        </h2>
+        <div ref={content.ref}>
+          <Accordion type="single" collapsible className="space-y-3">
+            {faqs.map((faq, i) => (
+              <AccordionItem
+                key={i}
+                value={`faq-${i}`}
+                className={`rounded-xl border bg-card px-6 transition-all duration-700 ${content.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+                style={{ transitionDelay: content.isVisible ? `${i * 100}ms` : "0ms" }}
+              >
+                <AccordionTrigger className="text-left font-semibold hover:no-underline">
+                  {faq.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  {faq.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </div>
+    </section>
+  );
+};

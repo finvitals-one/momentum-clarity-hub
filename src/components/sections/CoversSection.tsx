@@ -1,4 +1,5 @@
 import { Globe, Layers, BarChart3, PieChart } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const items = [
   {
@@ -23,23 +24,35 @@ const items = [
   },
 ];
 
-export const CoversSection = () => (
-  <section id="coverage" className="py-20">
-    <div className="mx-auto max-w-6xl px-6">
-      <h2 className="mb-12 text-center text-3xl font-bold tracking-tight md:text-4xl">
-        Momentum Analysis Across the Entire Market
-      </h2>
-      <div className="grid gap-6 sm:grid-cols-2">
-        {items.map((item) => (
-          <div key={item.title} className="group rounded-2xl border bg-card p-8 transition-all hover:border-primary/30 hover:shadow-lg">
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-              <item.icon className="h-6 w-6 text-primary" />
+export const CoversSection = () => {
+  const heading = useScrollReveal();
+  const grid = useScrollReveal();
+
+  return (
+    <section id="coverage" className="py-20">
+      <div className="mx-auto max-w-6xl px-6">
+        <h2
+          ref={heading.ref}
+          className={`mb-12 text-center text-3xl font-bold tracking-tight md:text-4xl transition-all duration-700 ${heading.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+        >
+          Momentum Analysis Across the Entire Market
+        </h2>
+        <div ref={grid.ref} className="grid gap-6 sm:grid-cols-2">
+          {items.map((item, i) => (
+            <div
+              key={item.title}
+              className={`group rounded-2xl border bg-card p-8 transition-all hover:border-primary/30 hover:shadow-lg hover-scale duration-700 ${grid.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              style={{ transitionDelay: grid.isVisible ? `${i * 120}ms` : "0ms" }}
+            >
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+                <item.icon className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="mb-3 text-xl font-bold">{item.title}</h3>
+              <p className="text-muted-foreground">{item.body}</p>
             </div>
-            <h3 className="mb-3 text-xl font-bold">{item.title}</h3>
-            <p className="text-muted-foreground">{item.body}</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
