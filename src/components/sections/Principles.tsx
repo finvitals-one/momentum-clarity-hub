@@ -1,18 +1,17 @@
 import { CheckCircle2 } from "lucide-react";
 
 const principles = [
-  "Momentum is a measurable, repeatable market phenomenon — not guesswork.",
-  "Weekly scoring eliminates noise. It keeps you focused on what matters.",
-  "One score removes the paralysis of tracking multiple conflicting signals.",
-  "Top-down analysis (market → sector → industry → stock) improves hit rate.",
-  "MomentoScope does not predict. It measures. You decide.",
+  "Momentum is measurable. Repeatable. Not guesswork.",
+  "Weekly scoring removes noise and keeps focus on what actually matters.",
+  "One unified score eliminates the confusion of multiple conflicting signals.",
+  "A top-down approach — market → sector → stock — improves decision quality and consistency.",
 ];
 
 export const Principles = () => (
   <section className="py-20">
     <div className="mx-auto max-w-3xl px-6">
       <h2 className="mb-10 text-center text-3xl font-bold tracking-tight md:text-4xl">
-        The Philosophy Behind the Score
+        The Philosophy Behind MomentoScope
       </h2>
       <div className="space-y-5">
         {principles.map((p, i) => (
@@ -21,6 +20,11 @@ export const Principles = () => (
             <p className="text-lg text-muted-foreground">{p}</p>
           </div>
         ))}
+      </div>
+      <div className="mt-10 text-center space-y-1">
+        <p className="text-lg font-semibold text-foreground">MomentoScope does not predict the market.</p>
+        <p className="text-lg font-semibold text-foreground">It measures it.</p>
+        <p className="text-lg font-bold text-primary">You decide.</p>
       </div>
     </div>
   </section>
