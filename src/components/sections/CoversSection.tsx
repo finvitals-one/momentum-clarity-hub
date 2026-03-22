@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Globe, Layers, Factory, PieChart } from "lucide-react";
+import { Globe, Layers, BarChart3, PieChart } from "lucide-react";
 
 const items = [
   {
@@ -10,17 +9,17 @@ const items = [
   {
     icon: Layers,
     title: "Sectoral Analysis",
-    body: "Capital rotates between sectors. MomentoScope helps you spot these rotations early — by showing which sectors are in the green zone right now.",
+    body: "Capital rotates between sectors. MomentoScope helps you spot these rotations early — by showing which sectors are in momentum right now.",
   },
   {
-    icon: Factory,
-    title: "Industry Analysis",
-    body: "Go one level deeper. Identify the specific industries within a sector showing the strongest momentum. Find precise pockets of opportunity.",
+    icon: BarChart3,
+    title: "Stock Analysis",
+    body: "Identify stocks showing increasing/decreasing or strongest/weakest momentum to trade smarter.",
   },
   {
     icon: PieChart,
     title: "ETF Analysis",
-    body: "Evaluate momentum across index ETFs, sector ETFs, thematic ETFs, and strategy ETFs. Ideal for investors who prefer diversified exposure over individual stock picking.",
+    body: "Evaluate momentum of ETFs. Ideal for investors who prefer diversified exposure over individual stock picking.",
   },
 ];
 
@@ -40,11 +39,6 @@ export const CoversSection = () => (
             <p className="text-muted-foreground">{item.body}</p>
           </div>
         ))}
-      </div>
-      <div className="mt-10 text-center">
-        <Button variant="outline" size="lg" className="rounded-full px-8">
-          See MomentoScope in Action <ArrowRight className="ml-1 h-4 w-4" />
-        </Button>
       </div>
     </div>
   </section>

@@ -1,13 +1,10 @@
-import { TrendingUp } from "lucide-react";
+import momentoLogo from "@/assets/momentoscope-logo.svg";
 
 export const Footer = () => (
   <footer className="border-t bg-card py-12">
     <div className="mx-auto max-w-6xl px-6">
-      <div className="mb-8 flex items-center justify-center gap-2">
-        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-          <TrendingUp className="h-4 w-4 text-primary-foreground" />
-        </div>
-        <span className="text-lg font-bold">MomentoScope</span>
+      <div className="mb-8 flex items-center justify-center">
+        <img src={momentoLogo} alt="MomentoScope" className="h-12" />
       </div>
       <p className="mb-6 text-center text-lg font-semibold text-muted-foreground">
         MomentoScope — Momentum, Measured.

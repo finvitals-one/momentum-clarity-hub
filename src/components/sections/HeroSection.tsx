@@ -1,31 +1,37 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import NeonHeroBackground from "@/components/NeonHeroBackground";
 
 export const HeroSection = () => (
   <section className="relative overflow-hidden min-h-[85vh] flex items-center">
     <NeonHeroBackground />
     
-    {/* Content overlay */}
     <div className="relative z-10 mx-auto max-w-6xl px-6 w-full py-24 md:py-32">
       <div className="text-center">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/15 px-4 py-1.5 text-sm font-medium text-white/90">
-          <span className="inline-block h-2 w-2 rounded-full bg-primary" />
-          Proprietary Momentum Scoring System
-        </div>
         <h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl drop-shadow-lg">
-          One Score. Total Clarity.<br />Smarter Momentum Decisions.
+          Momentum Demystified.<br />
+          Trends Identified.<br />
+          Trades Simplified.
         </h1>
-        <p className="mx-auto mb-8 max-w-2xl text-lg text-white/75">
-          MomentoScope combines six powerful technical indicators into a single score — so you always know where the momentum is, and where it isn't.
+        <p className="mx-auto mb-10 max-w-2xl text-lg text-white/75 md:text-xl">
+          One Score &amp; Three Zones Replacing Six Indicators.<br />
+          Less Noise. More Clarity.
         </p>
-        <Button size="lg" className="rounded-full px-8 shadow-lg shadow-primary/25">
-          Explore How It Works <ArrowRight className="ml-1 h-4 w-4" />
-        </Button>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Button size="lg" className="rounded-full px-8 shadow-lg shadow-primary/25" asChild>
+            <a href="https://www.quantfy.in" target="_blank" rel="noopener noreferrer">
+              Explore MomentoScope on QuanTfy <ExternalLink className="ml-1 h-4 w-4" />
+            </a>
+          </Button>
+          <Button size="lg" variant="outline" className="rounded-full px-8 border-white/20 bg-white/10 text-white hover:bg-white/20 hover:text-white" asChild>
+            <a href="#how-it-works">
+              See How It Works <ArrowRight className="ml-1 h-4 w-4" />
+            </a>
+          </Button>
+        </div>
       </div>
     </div>
 
-    {/* Bottom fade to page background */}
     <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
   </section>
 );
