@@ -232,7 +232,7 @@ export const MomentumChart = () => {
             textAnchor="middle"
             fill="hsl(var(--muted-foreground))"
             fontSize="8"
-            opacity={i % 3 === 0 ? 0.7 : 0}
+            opacity={i % 3 === 0 || i === DATA.length - 1 ? 0.7 : 0}
           >
             {d.date}
           </text>
