@@ -40,7 +40,6 @@ export const Principles = () => {
         >
           <p className="text-lg font-semibold text-foreground">MomentoScope does not predict the market.</p>
           <p className="text-lg font-semibold text-foreground">It measures it.</p>
-          <p className="text-lg font-bold text-primary">You decide.</p>
         </div>
       </div>
     </section>

@@ -35,7 +35,7 @@ export const WhatIsSection = () => {
         {/* Six Indicators — ABOVE chart */}
         <div
           ref={indGrid.ref}
-          className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          className="mx-auto mb-12 max-w-4xl grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
           {indicators.map((ind, i) => (
             <div
