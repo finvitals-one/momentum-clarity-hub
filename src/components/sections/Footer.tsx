@@ -1,10 +1,13 @@
-import momentoLogo from "@/assets/momentoscope-logo.svg";
+import momentoIcon from "@/assets/momentoscope-icon.png";
 
 export const Footer = () => (
   <footer className="border-t bg-card py-12">
     <div className="mx-auto max-w-6xl px-6">
-      <div className="mb-8 flex items-center justify-center">
-        <img src={momentoLogo} alt="MomentoScope" className="h-12" />
+      <div className="mb-8 flex items-center justify-center gap-3">
+        <img src={momentoIcon} alt="MomentoScope" className="h-12 w-12" />
+        <span className="text-2xl font-bold tracking-wide" style={{ fontFamily: "'Revue Std', serif" }}>
+          MomentoScope
+        </span>
       </div>
       <p className="mb-6 text-center text-lg font-semibold text-muted-foreground">
         MomentoScope — Momentum, Measured.
