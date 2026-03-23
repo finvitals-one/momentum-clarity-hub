@@ -137,7 +137,7 @@ export const MomentumChart = () => {
   const dashLines = [50, 70];
 
   // Y-axis labels
-  const yLabels = [0, 20, 40, 50, 60, 70, 80, 100];
+  const yLabels = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
   const visibleCount = Math.floor(progress * DATA.length) + 1;
   const visibleData = DATA.slice(0, Math.min(visibleCount, DATA.length));
