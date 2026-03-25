@@ -1,14 +1,11 @@
-import momentoIcon from "@/assets/momentoscope-icon.png";
+import fullLogo from "@/assets/momentoscope-full-logo.png";
 import { ExternalLink } from "lucide-react";
 
 export const Navbar = () => (
   <nav className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-md">
-    <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
-      <div className="flex items-center gap-2">
-        <img src={momentoIcon} alt="MomentoScope" className="h-10 w-10" />
-        <span className="text-xl font-bold tracking-wide" style={{ fontFamily: "'Revue Std', serif" }}>
-          MomentoScope
-        </span>
+    <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <div className="flex items-center">
+        <img src={fullLogo} alt="MomentoScope" className="h-12 sm:h-14" />
       </div>
       <div className="flex items-center text-sm font-bold text-foreground">
         <span className="hidden sm:inline">Available exclusively on</span>
