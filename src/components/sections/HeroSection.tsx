@@ -15,7 +15,7 @@ export const HeroSection = () => (
         </h1>
         <p className="mx-auto mb-10 max-w-2xl text-lg text-white/75 md:text-xl">
           One Score &amp; Three Zones Replacing Six Indicators.<br />
-          Good Bye Analysis Paralysis.
+          Goodbye Analysis Paralysis!
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button size="lg" className="rounded-full px-8 shadow-lg shadow-primary/25" asChild>
