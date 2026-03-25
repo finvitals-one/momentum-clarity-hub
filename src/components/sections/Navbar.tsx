@@ -10,17 +10,17 @@ export const Navbar = () => (
           MomentoScope
         </span>
       </div>
-      <div className="flex items-center text-sm text-muted-foreground">
+      <div className="flex items-center text-sm font-bold text-foreground">
         <span className="hidden sm:inline">Available exclusively on</span>
         <a
           href="https://www.quantfy.in"
           target="_blank"
           rel="noopener noreferrer"
-          className="ml-1 inline-flex items-center gap-1 font-semibold text-primary transition-colors hover:text-primary/80"
+          className="ml-1 inline-flex items-center gap-1 font-extrabold text-primary transition-colors hover:text-primary/80"
         >
           QuanTfy <ExternalLink className="h-3.5 w-3.5" />
         </a>
-        <span className="ml-1 hidden md:inline text-muted-foreground">— A web app for stock analysis at ease</span>
+        <span className="ml-1 hidden md:inline">— A web app for stock analysis at ease !</span>
       </div>
     </div>
   </nav>
