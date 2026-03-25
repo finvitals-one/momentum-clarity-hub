@@ -13,7 +13,7 @@ export const Footer = () => (
           MomentoScope
         </span>
       </div>
-      <p className="mb-6 text-center text-lg font-semibold" style={{ color: 'hsl(210, 80%, 55%)' }}>
+      <p className="mb-6 text-center text-lg font-semibold" style={{ color: 'hsl(220, 70%, 35%)' }}>
         Momentum Demystified !
       </p>
       <p className="mx-auto max-w-2xl text-center text-xs text-muted-foreground">
