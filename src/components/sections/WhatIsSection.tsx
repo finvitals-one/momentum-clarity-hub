@@ -103,7 +103,7 @@ export const WhatIsSection = () => {
           </div>
 
           <p className="mt-8 text-center text-lg font-medium text-muted-foreground">
-            Higher the score, stronger the momentum. It's that simple.
+            Higher the score, stronger the momentum.
           </p>
         </div>
       </div>

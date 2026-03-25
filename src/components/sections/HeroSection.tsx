@@ -8,14 +8,14 @@ export const HeroSection = () => (
     
     <div className="relative z-10 mx-auto max-w-6xl px-6 w-full py-24 md:py-32">
       <div className="text-center">
-        <h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl drop-shadow-lg">
-          Momentum Demystified.<br />
-          Trends Identified.<br />
-          Trades Simplified.
+        <h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl drop-shadow-lg" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: '-0.03em' }}>
+          <span className="bg-gradient-to-r from-orange-300 via-orange-400 to-amber-300 bg-clip-text text-transparent">Momentum Demystified.</span><br />
+          <span className="text-white/90">Trends Identified.</span><br />
+          <span className="bg-gradient-to-r from-amber-300 via-orange-400 to-orange-500 bg-clip-text text-transparent">Trades Simplified.</span>
         </h1>
         <p className="mx-auto mb-10 max-w-2xl text-lg text-white/75 md:text-xl">
           One Score &amp; Three Zones Replacing Six Indicators.<br />
-          Less Noise. More Clarity.
+          Good Bye Analysis Paralysis.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button size="lg" className="rounded-full px-8 shadow-lg shadow-primary/25" asChild>
