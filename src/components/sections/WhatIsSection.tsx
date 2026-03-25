@@ -100,11 +100,13 @@ export const WhatIsSection = () => {
               <span className="text-2xl font-bold">0–49</span>
               <p className="text-sm text-muted-foreground">Weak or negative momentum. Downward pressure visible. Exit signal or area to avoid.</p>
             </div>
+            {/* Summary row */}
+            <div className="border-t bg-muted/30 px-6 py-4 text-center">
+              <p className="text-base font-semibold text-muted-foreground">
+                Higher the score, stronger the momentum.
+              </p>
+            </div>
           </div>
-
-          <p className="mt-8 text-center text-lg font-medium text-muted-foreground">
-            Higher the score, stronger the momentum.
-          </p>
         </div>
       </div>
     </section>
