@@ -3,12 +3,8 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const faqs = [
   {
-    q: "How often is the MomentoScope score updated?",
-    a: "Every week, after the weekly candle closes. This ensures stability and filters out intraday or daily noise.",
-  },
-  {
-    q: "Does a green zone score mean I should buy immediately?",
-    a: "No. MomentoScope measures momentum, not fundamentals or valuation. It is one input in a decision — not the only one.",
+    q: "Which timeframe is used for MomentoScope?",
+    a: "Weekly. MomentoScope is updated after weekly closing. This ensures stability and filters out intraday or daily noise.",
   },
   {
     q: "Can MomentoScope be used for ETFs and indices, not just stocks?",
@@ -19,8 +15,8 @@ const faqs = [
     a: "No. MomentoScope is an analytical framework. It provides momentum signals. All investment decisions remain yours.",
   },
   {
-    q: "What timeframe does MomentoScope work best for?",
-    a: "It is designed for medium-term momentum investing — typically weeks to months — not intraday trading.",
+    q: "Which type of trades are best suitable taken on the basis of MomentoScope?",
+    a: "Momentum investing (tradevesting), which are typically trades for weeks to months duration are best suitable.",
   },
 ];
 
@@ -29,8 +25,12 @@ export const FaqSection = () => {
   const content = useScrollReveal();
 
   return (
-    <section id="faq" className="py-20">
-      <div className="mx-auto max-w-3xl px-6">
+    <section id="faq" className="relative py-20 overflow-hidden">
+      {/* Background matching theme */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-accent/30 to-background" />
+      <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, hsl(24 95% 53%) 0%, transparent 70%)' }} />
+      
+      <div className="relative mx-auto max-w-3xl px-6">
         <h2
           ref={heading.ref}
           className={`mb-10 text-center text-3xl font-bold tracking-tight md:text-4xl transition-all duration-700 ${heading.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
@@ -43,7 +43,7 @@ export const FaqSection = () => {
               <AccordionItem
                 key={i}
                 value={`faq-${i}`}
-                className={`rounded-xl border bg-card px-6 transition-all duration-700 ${content.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+                className={`rounded-xl border border-primary/10 bg-card/80 backdrop-blur-sm px-6 transition-all duration-700 hover:border-primary/30 ${content.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
                 style={{ transitionDelay: content.isVisible ? `${i * 100}ms` : "0ms" }}
               >
                 <AccordionTrigger className="text-left font-semibold hover:no-underline">

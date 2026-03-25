@@ -28,7 +28,7 @@ export const WhatIsSection = () => {
             One Score. Three Zones. Less Confusion. More Clarity.
           </h2>
           <p className="mb-10 text-lg text-muted-foreground">
-            MomentoScope is a proprietary system that combines six powerful technical indicators into one score and three zones — so you always know where the momentum is, and where it isn't.
+            MomentoScope is a proprietary system that combines six powerful technical indicators into one score and three zones — so you always know where the momentum is, and where it isn't. MomentoScope uses weekly timeframe.
           </p>
         </div>
 
@@ -103,7 +103,7 @@ export const WhatIsSection = () => {
           </div>
 
           <p className="mt-8 text-center text-lg font-medium text-muted-foreground">
-            Higher the score, stronger the momentum. It's that simple.
+            Higher the score, stronger the momentum.
           </p>
         </div>
       </div>
