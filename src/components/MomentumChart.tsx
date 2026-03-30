@@ -119,8 +119,8 @@ export const MomentumChart = () => {
     verticalZones.push({
       x: cross50Up,
       w: yellowEnd - cross50Up,
-      color: "hsl(45, 90%, 50%)",
-      opacity: 0.12,
+      color: "hsl(45, 90%, 40%)",
+      opacity: 0.3,
     });
 
     if (cross70Up != null) {
