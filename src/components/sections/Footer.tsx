@@ -7,7 +7,7 @@ export const Footer = () => (
     
     <div className="relative mx-auto max-w-6xl px-6">
       <div className="mb-6 flex justify-center">
-        <img src={fullLogo} alt="MomentoScope - Momentum Demystified!" className="h-16 sm:h-20" />
+        <img src={fullLogo} alt="MomentoScope - Momentum Demystified!" className="h-16 sm:h-20 brightness-[1.8]" />
       </div>
       <p className="mx-auto max-w-2xl text-center text-xs text-muted-foreground">
         MomentoScope is an analytical tool for educational and informational purposes only. It does not constitute financial advice or investment recommendations. All investment decisions involve risk. Please consult a qualified financial advisor before making any investment.
