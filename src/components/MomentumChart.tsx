@@ -147,7 +147,7 @@ export const MomentumChart = () => {
     .join(" ");
 
   return (
-    <div className="w-full overflow-hidden rounded-2xl border bg-card shadow-xl">
+    <div className="w-full overflow-hidden rounded-2xl border border-border/50 shadow-2xl" style={{ backgroundColor: 'hsl(220, 25%, 10%)' }}>
       <svg
         ref={ref}
         viewBox={`0 0 ${W} ${H}`}
