@@ -2,7 +2,7 @@ import fullLogo from "@/assets/momentoscope-full-logo.png";
 import { ExternalLink } from "lucide-react";
 
 export const Navbar = () => (
-  <nav className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-md">
+  <nav className="sticky top-0 z-50 border-b border-border/50 backdrop-blur-md" style={{ backgroundColor: 'hsl(220, 20%, 14%)' }}>
     <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
       <div className="flex items-center">
         <img src={fullLogo} alt="MomentoScope" className="h-12 sm:h-14 brightness-[1.8]" />
