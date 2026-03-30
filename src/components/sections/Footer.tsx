@@ -1,9 +1,9 @@
 import fullLogo from "@/assets/momentoscope-full-logo.png";
 
 export const Footer = () => (
-  <footer className="relative border-t border-primary/10 py-12 overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-t from-accent/40 via-background to-background" />
-    <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 50% 80%, hsl(24 95% 53%) 0%, transparent 60%)' }} />
+  <footer className="relative border-t border-border/50 py-12 overflow-hidden" style={{ backgroundColor: 'hsl(220, 20%, 14%)' }}>
+    <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-transparent" />
+    <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 50% 80%, hsl(24 95% 53%) 0%, transparent 60%)' }} />
     
     <div className="relative mx-auto max-w-6xl px-6">
       <div className="mb-6 flex justify-center">
