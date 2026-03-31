@@ -110,8 +110,8 @@ export const MomentumChart = () => {
   verticalZones.push({
     x: chartLeft,
     w: redEnd - chartLeft,
-    color: "hsl(0, 70%, 40%)",
-    opacity: 0.35,
+    color: "hsl(0, 70%, 55%)",
+    opacity: 0.12,
   });
 
   if (cross50Up != null) {
@@ -119,16 +119,16 @@ export const MomentumChart = () => {
     verticalZones.push({
       x: cross50Up,
       w: yellowEnd - cross50Up,
-      color: "hsl(45, 90%, 40%)",
-      opacity: 0.3,
+      color: "hsl(45, 90%, 50%)",
+      opacity: 0.12,
     });
 
     if (cross70Up != null) {
       verticalZones.push({
         x: cross70Up,
         w: chartRight - cross70Up,
-        color: "hsl(142, 60%, 35%)",
-        opacity: 0.35,
+        color: "hsl(142, 60%, 45%)",
+        opacity: 0.12,
       });
     }
   }
@@ -147,7 +147,7 @@ export const MomentumChart = () => {
     .join(" ");
 
   return (
-    <div className="w-full overflow-hidden rounded-2xl border border-border/50 shadow-2xl" style={{ backgroundColor: 'hsl(220, 25%, 10%)' }}>
+    <div className="w-full overflow-hidden rounded-2xl border bg-card shadow-xl">
       <svg
         ref={ref}
         viewBox={`0 0 ${W} ${H}`}
