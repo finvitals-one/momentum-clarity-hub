@@ -109,10 +109,10 @@ const SectionBlock = ({
           {items.map((item, i) => (
             <div
               key={item.title}
-              className={`group rounded-2xl border bg-card/80 backdrop-blur-sm p-6 transition-all duration-700 ${accent.hoverBorder} hover:shadow-lg ${accent.hoverShadow} ${grid.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-              style={{ transitionDelay: grid.isVisible ? `${i * 120}ms` : "0ms" }}
+              className={`group rounded-2xl border bg-card/80 backdrop-blur-sm p-6 text-center transition-all duration-700 ${accent.hoverBorder} hover:shadow-lg ${accent.hoverShadow} hover:-translate-y-1 ${grid.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              style={{ transitionDelay: grid.isVisible ? `${i * 150}ms` : "0ms" }}
             >
-              <div className={`mb-4 flex h-11 w-11 items-center justify-center rounded-xl ${accent.iconBg}`}>
+              <div className={`mb-4 mx-auto flex h-11 w-11 items-center justify-center rounded-xl ${accent.iconBg} transition-transform duration-300 group-hover:scale-110`}>
                 <item.icon className={`h-5 w-5 ${accent.iconColor}`} />
               </div>
               <h4 className="mb-2 text-lg font-bold">{item.title}</h4>
