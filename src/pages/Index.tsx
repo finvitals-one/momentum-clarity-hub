@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/sections/HeroSection";
 import { WhatIsSection } from "@/components/sections/WhatIsSection";
+import { WhyMomentoScope } from "@/components/sections/WhyMomentoScope";
 import { CoversSection } from "@/components/sections/CoversSection";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { Footer } from "@/components/sections/Footer";
@@ -10,6 +11,7 @@ const Index = () => (
     <Navbar />
     <HeroSection />
     <WhatIsSection />
+    <WhyMomentoScope />
     <CoversSection />
     <FaqSection />
     <Footer />
