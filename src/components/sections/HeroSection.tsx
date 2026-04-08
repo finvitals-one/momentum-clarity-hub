@@ -8,7 +8,7 @@ export const HeroSection = () => (
     
     <div className="relative z-10 mx-auto max-w-6xl px-6 w-full py-24 md:py-32">
       <div className="text-center">
-        <p className="mb-3 text-sm font-bold tracking-[0.3em] uppercase text-primary/90 animate-fade-in">MomentoScope</p>
+        <p className="mb-3 text-base font-bold tracking-[0.3em] text-primary/90 animate-fade-in">MomentoScope</p>
         <h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl drop-shadow-lg" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: '-0.03em' }}>
           <span className="bg-gradient-to-r from-orange-300 via-orange-400 to-amber-300 bg-clip-text text-transparent">Momentum Demystified.</span><br />
           <span className="text-white/90">Trends Identified.</span><br />
