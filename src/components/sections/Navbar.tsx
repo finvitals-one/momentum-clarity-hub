@@ -3,9 +3,10 @@ import { ExternalLink } from "lucide-react";
 
 export const Navbar = () => (
   <nav className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-md">
-    <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-      <div className="flex items-center">
-        <img src={fullLogo} alt="MomentoScope" className="h-12 sm:h-14" />
+    <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+      <div className="flex flex-col items-start">
+        <span className="text-xs font-bold tracking-widest uppercase text-primary mb-0.5">MomentoScope</span>
+        <img src={fullLogo} alt="MomentoScope" className="h-10 sm:h-12" />
       </div>
       <div className="flex items-center text-sm font-bold text-foreground">
         <span className="hidden sm:inline">Available exclusively on</span>

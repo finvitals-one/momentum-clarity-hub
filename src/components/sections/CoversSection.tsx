@@ -35,7 +35,7 @@ export const CoversSection = () => {
           ref={heading.ref}
           className={`mb-12 text-center text-3xl font-bold tracking-tight md:text-4xl transition-all duration-700 ${heading.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
         >
-          Momentum Analysis Across the Entire Market
+          Analyse Momentum Across the Market
         </h2>
         <div ref={grid.ref} className="grid gap-6 sm:grid-cols-2">
           {items.map((item, i) => (
