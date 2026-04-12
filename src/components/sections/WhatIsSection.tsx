@@ -40,7 +40,7 @@ export const WhatIsSection = () => {
           {indicators.map((ind, i) => (
             <div
               key={ind.abbr}
-              className={`group rounded-xl border bg-card p-5 transition-all hover:border-primary/30 hover:shadow-md hover-scale duration-700 ${indGrid.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              className={`group rounded-xl border bg-card p-5 text-center transition-all hover:border-primary/30 hover:shadow-md hover-scale duration-700 ${indGrid.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               style={{ transitionDelay: indGrid.isVisible ? `${i * 100}ms` : "0ms" }}
             >
               <span className="mb-2 inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm font-bold text-primary">
