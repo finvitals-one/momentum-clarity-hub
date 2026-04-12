@@ -3,6 +3,7 @@ import { WhatIsSection } from "@/components/sections/WhatIsSection";
 import { WhyCanDo, WhyDontNeed, WhyQuantfy } from "@/components/sections/WhyMomentoScope";
 import { CoversSection } from "@/components/sections/CoversSection";
 import { FaqSection } from "@/components/sections/FaqSection";
+import { CtaSection } from "@/components/sections/CtaSection";
 import { Footer } from "@/components/sections/Footer";
 import { Navbar } from "@/components/sections/Navbar";
 
@@ -16,6 +17,7 @@ const Index = () => (
     <WhyQuantfy />
     <CoversSection />
     <FaqSection />
+    <CtaSection />
     <Footer />
   </div>
 );

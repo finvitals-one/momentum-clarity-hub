@@ -41,10 +41,10 @@ export const CoversSection = () => {
           {items.map((item, i) => (
             <div
               key={item.title}
-              className={`group rounded-2xl border bg-card p-8 transition-all hover:border-primary/30 hover:shadow-lg hover-scale duration-700 ${grid.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              className={`group rounded-2xl border bg-card p-8 text-center transition-all hover:border-primary/30 hover:shadow-lg hover-scale duration-700 ${grid.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               style={{ transitionDelay: grid.isVisible ? `${i * 120}ms` : "0ms" }}
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+              <div className="mb-4 mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
                 <item.icon className="h-6 w-6 text-primary" />
               </div>
               <h3 className="mb-3 text-xl font-bold">{item.title}</h3>
