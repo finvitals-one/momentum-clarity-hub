@@ -20,7 +20,7 @@ export const HeroSection = () => (
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button size="lg" className="rounded-full px-8 shadow-lg shadow-primary/25" asChild>
-            <a href="https://www.quantfy.in" target="_blank" rel="noopener noreferrer">
+            <a href="https://quantfy.in" target="_blank" rel="noopener noreferrer">
               Explore MomentoScope on QuanTfy <ExternalLink className="ml-1 h-4 w-4" />
             </a>
           </Button>

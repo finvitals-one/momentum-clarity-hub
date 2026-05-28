@@ -21,7 +21,7 @@ export const CtaSection = () => {
           Subscribe to QuanTfy and unlock MomentoScope — your edge in momentum analysis.
         </p>
         <Button size="lg" className="rounded-full px-10 shadow-lg shadow-primary/25" asChild>
-          <a href="https://www.quantfy.in" target="_blank" rel="noopener noreferrer">
+          <a href="https://quantfy.in" target="_blank" rel="noopener noreferrer">
             Get MomentoScope on QuanTfy <ExternalLink className="ml-2 h-4 w-4" />
           </a>
         </Button>
