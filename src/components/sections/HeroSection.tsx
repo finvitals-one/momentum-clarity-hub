@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import NeonHeroBackground from "@/components/NeonHeroBackground";
 
 export const HeroSection = () => (
@@ -18,12 +18,7 @@ export const HeroSection = () => (
           One Score &amp; Three Zones Replacing Six Indicators.<br />
           Goodbye Analysis Paralysis!
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button size="lg" className="rounded-full px-8 shadow-lg shadow-primary/25" asChild>
-            <a href="https://quantfy.in" target="_blank" rel="noopener noreferrer">
-              Explore MomentoScope on QuanTfy <ExternalLink className="ml-1 h-4 w-4" />
-            </a>
-          </Button>
+        <div className="flex items-center justify-center">
           <Button size="lg" variant="outline" className="rounded-full px-8 border-white/20 bg-white/10 text-white hover:bg-white/20 hover:text-white" asChild>
             <a href="#how-it-works">
               See How It Works <ArrowRight className="ml-1 h-4 w-4" />
