@@ -18,7 +18,7 @@ export const CtaSection = () => {
           Ready to See Momentum Clearly?
         </h2>
         <p className="mb-8 text-lg text-muted-foreground">
-          Subscribe to QuanTfy and unlock MomentoScope — your edge in momentum analysis.
+          Subscribe to QuanTfy and unlock MomentoScope, your edge in momentum analysis.
         </p>
         <Button size="lg" className="rounded-full px-10 shadow-lg shadow-primary/25" asChild>
           <a href="https://quantfy.in" target="_blank" rel="noopener noreferrer">

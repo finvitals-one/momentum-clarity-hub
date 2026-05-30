@@ -18,6 +18,14 @@ const faqs = [
     q: "Which type of trades are best suitable taken on the basis of MomentoScope?",
     a: "Momentum investing (tradevesting), which are typically trades for weeks to months duration are best suitable.",
   },
+  {
+    q: "Is MomentoScope free?",
+    a: "MomentoScope is available to subscribers of the QuanTfy platform. Visit QuanTfy to explore available plans.",
+  },
+  {
+    q: "Do I need to have technical indicators knowledge to assess MomentoScope?",
+    a: "No. The MomentoScope is designed to be intuitive. You don't need to understand every underlying indicator — the framework translates complexity into clarity.",
+  },
 ];
 
 export const FaqSection = () => {

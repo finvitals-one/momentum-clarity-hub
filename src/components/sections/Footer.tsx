@@ -10,7 +10,10 @@ export const Footer = () => (
         <img src={fullLogo} alt="MomentoScope - Momentum Demystified!" className="h-16 sm:h-20" />
       </div>
       <p className="mx-auto max-w-2xl text-center text-xs text-muted-foreground">
-        MomentoScope is an analytical tool for educational and informational purposes only. It does not constitute financial advice or investment recommendations. All investment decisions involve risk. Please consult a qualified financial advisor before making any investment.
+        MomentoScope is an analytical tool for research and informational purposes only. It does not constitute financial advice or investment recommendations. All investment decisions involve risk. Please consult a qualified financial advisor before making any investment.
+      </p>
+      <p className="mt-6 text-center text-xs text-muted-foreground">
+        © Anegh Technologies
       </p>
     </div>
   </footer>
