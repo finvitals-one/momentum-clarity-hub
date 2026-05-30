@@ -13,7 +13,7 @@ export const Footer = () => (
         MomentoScope is an analytical tool for research and informational purposes only. It does not constitute financial advice or investment recommendations. All investment decisions involve risk. Please consult a qualified financial advisor before making any investment.
       </p>
       <p className="mt-6 text-center text-xs text-muted-foreground">
-        © Anegh Technologies
+        © Amegh Technologies
       </p>
     </div>
   </footer>

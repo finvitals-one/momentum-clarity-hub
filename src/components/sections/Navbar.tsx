@@ -1,6 +1,6 @@
 import { useState } from "react";
 import fullLogo from "@/assets/momentoscope-full-logo.png";
-import { ExternalLink, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
@@ -30,11 +30,6 @@ export const Navbar = () => {
               {link.label}
             </a>
           ))}
-          <Button size="sm" className="rounded-full" asChild>
-            <a href="https://quantfy.in" target="_blank" rel="noopener noreferrer">
-              QuanTfy <ExternalLink className="ml-1 h-3.5 w-3.5" />
-            </a>
-          </Button>
         </div>
 
         <Sheet open={open} onOpenChange={setOpen}>
@@ -55,16 +50,6 @@ export const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <Button className="mt-4 rounded-full" asChild>
-                <a
-                  href="https://quantfy.in"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setOpen(false)}
-                >
-                  QuanTfy <ExternalLink className="ml-1 h-3.5 w-3.5" />
-                </a>
-              </Button>
             </div>
           </SheetContent>
         </Sheet>
